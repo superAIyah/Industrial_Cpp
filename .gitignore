@@ -1,0 +1,4 @@
+*.xz
+build/
+*.swp
+.vscode/

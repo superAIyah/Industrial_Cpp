@@ -1,0 +1,13 @@
+#! /bin/bash
+# Исходный массив: 1 3 7 2 1
+path="./build/exe/main"
+n=2
+val=3
+output=$($path $n $val)
+res=$(echo $output | grep "3 3 7 2 1")
+if [[ $res == "3 3 7 2 1" ]]; then
+	echo "OK"
+else
+	echo "FAILED"
+fi
+
