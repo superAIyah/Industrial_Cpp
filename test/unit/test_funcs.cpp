@@ -19,6 +19,15 @@ TEST(copy_n, vectors) {
     ASSERT_EQ(a, b);
 }
 
+TEST(fill_and_copy, vectors) {
+    std::vector<int> v1{1, 2, 3};
+    fill_n_my(v1.begin(), 3, 0);
+    std::vector<int> to({1, 2, 3, 4, 5});
+    copy_n_my(v1.begin(), 3, to.begin());
+    std::vector<int> ans({0, 0, 0, 4, 5});
+    ASSERT_EQ(to, ans);
+}
+
 TEST(filll_n, vectors) {
     std::vector<int> v1{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
  
