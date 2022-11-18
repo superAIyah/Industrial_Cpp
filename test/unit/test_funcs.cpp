@@ -4,11 +4,27 @@
 #include "funcs.h"
 #include <gtest/gtest.h>
 
+TEST(copy_n, string) {
+    std::string in = "1234567890";
+    std::string out;
+ 
+    copy_n_my(in.begin(), 4, std::back_inserter(out));
+    ASSERT_EQ(out, "1234");
+}
+
 TEST(copy_n, vectors) {
     std::vector<int> a = {1, 2, 3, 4};
     std::vector<int> b = {1, 0, 0, 4};
     copy_n_my(a.begin() + 1, 2, b.begin() + 1);
     ASSERT_EQ(a, b);
+}
+
+TEST(filll_n, vectors) {
+    std::vector<int> v1{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+ 
+    fill_n_my(v1.begin(), 5, -1);
+    std::vector<int> ans({-1, -1, -1, -1, -1, 5, 6, 7, 8, 9});
+    ASSERT_EQ(v1, ans);
 }
 
 TEST(transform, string) {

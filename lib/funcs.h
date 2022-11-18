@@ -10,7 +10,7 @@ OutputIt copy_n_my(InputIt first, Size count, OutputIt result)
 {
     if (count > 0) {
         *result++ = *first;
-        for (Size i = 0; i < count; ++i) { // !!! i = 1 !!!
+        for (Size i = 1; i < count; ++i) {
             *result++ = *++first;
         }
     }
@@ -21,7 +21,7 @@ OutputIt copy_n_my(InputIt first, Size count, OutputIt result)
 template<class OutputIt, class Size, class T>
 OutputIt fill_n_my(OutputIt first, Size count, const T& value)
 {
-    for (Size i = 1; i < count; i++) { // !!! i = 0 !!!
+    for (Size i = 0; i < count; i++) {
         *first++ = value;
     }
     return first;
